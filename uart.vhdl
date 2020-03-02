@@ -1,6 +1,18 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+
+--This file contains the UART Transmitter and Receiver.  This transmitter is able
+-- to transmit 8 bits of serial data, one start bit, one stop bit,
+-- and no parity bit.  The receiver receives 8 bits of serial data, along with a start and stop bit.
+-- When transmit is complete o_TX_Done will be driven high for one clock cycle.
+--
+-- Set Generic g_CLKS_PER_BIT as follows:
+-- g_CLKS_PER_BIT = (Frequency of i_Clk)/(Frequency of UART)
+-- Example: 10 MHz Clock, 115200 baud UART
+-- (10000000)/(115200) = 87
+-- (50000000)/(115200) = 434
+
  
 entity UART is
   generic (
