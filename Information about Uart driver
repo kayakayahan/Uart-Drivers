@@ -18,6 +18,4 @@ How UART works?
 To know the working of UART, you need to understand the basic functionality of serial communication. 
 In short, transmitter and receiver use start bit, stop bit and timing parameters to synchronize with each other. 
 The original data is in the parallel form. For example, we have 4-bit data, to convert it into the serial form,
-we need a parallel to serial converter. Generally, D flip-flops or latches are used to design the converters.
-
-
+we need a parallel to serial converter.
