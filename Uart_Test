@@ -2,6 +2,15 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+-- Set Generic g_CLKS_PER_BIT as follows:
+-- g_CLKS_PER_BIT = (Frequency of i_Clk)/(Frequency of UART)
+-- Example: 10 MHz Clock, 115200 baud UART
+-- (10000000)/(115200) = 87
+-- (50000000)/(115200)= 434
+-- (50000000)/(12500000)=4
+
+
+
 Entity UART_TEST is 
 	port ( clk 		: in std_logic;
 			leds 		: out std_logic_vector (8 downto 1);
